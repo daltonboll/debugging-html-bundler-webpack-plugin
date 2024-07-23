@@ -1,0 +1,13 @@
+# The target/ directory is where compiled maven files go. We do not want to sync those to production
+target/
+
+# Maven files
+mvnw
+mvnw.cmd
+
+# Intellij
+.idea/
+
+# Node/NPM
+node
+node_modules

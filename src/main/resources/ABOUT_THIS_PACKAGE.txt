@@ -1,0 +1,5 @@
+Normally, this package is used by Spring Boot for front-end files. However, I'm
+keeping all of my front-end code in the `src/main/frontend` package.
+
+This package also contains an `application.properties` file, which allows you to
+set various settings for Spring Boot and its plugins.
