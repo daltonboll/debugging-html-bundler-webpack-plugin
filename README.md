@@ -1,6 +1,6 @@
 This is a small project created with the purpose of debugging [issue #102 of the html-bundler-webpack-plugin](https://github.com/webdiscus/html-bundler-webpack-plugin/issues/102).
 
-This project uses Spring Boot on the back-end and requires maven and npm to run. To run this project, use:
+This project uses Spring Boot on the back-end and requires maven, npm, and java to run. To run this project, use:
 
 `mvn spring-boot:run`
 
