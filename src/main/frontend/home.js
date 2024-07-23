@@ -1,4 +1,4 @@
-// import "./styles.scss?inline"; // <= If I comment this out, the application runs without error and the JS is executed on the page just fine (the CSS is just absent from the webpage)
-// import "./styles.scss"; // <= this syntax also causes an error
+import "./styles.scss"; // <= this correctly puts the CSS into its own file
+// import "./styles.scss?inline"; // <= if I use this syntax instead, the CSS is not inlined. It still gets put into a separate file.
 
 console.log('hello world!');
