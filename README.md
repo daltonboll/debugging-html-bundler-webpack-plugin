@@ -1,9 +1,18 @@
-This is a small project created with the purpose of debugging [issue #102 of the html-bundler-webpack-plugin](https://github.com/webdiscus/html-bundler-webpack-plugin/issues/102).
+This is a small repo created with the purpose of debugging [issue #102 of the html-bundler-webpack-plugin](https://github.com/webdiscus/html-bundler-webpack-plugin/issues/102#issuecomment-2266675508).
 
-This project uses Spring Boot on the back-end and requires maven, npm, and java to run. To run this project, use:
+# Running the project
+To run webpack in production mode, use: `npm run prod-build` (this wraps a call to `webpack --mode production`).
 
-`mvn spring-boot:run`
+To run webpack in development mode, use: `npm run dev-build` (this wraps a call to `webpack --mode development`).
 
-You can then visit http://localhost:8080/ to see the project home page.
+Open the resulting `index.html` file with your browser (located in `dist/`) to see the result.
 
-The back-end files live in `src/main/java` and the front-end files live in `src/main/frontend`. To see the error described in issue #102, uncomment either of the `import` statements in `src/main/frontend/home.js`.
+
+# File structure
+The source files are located in `src/`. The `src/index.html` file has 3 `<p>` elements in it that are individually targeted by 3 different .scss file imports. The HTML file imports a JS file, `src/index.js`. This JS file imports the 3 .scss files.
+
+
+# The bug
+In production mode, all 3 .scss imports work as expected. However, in development mode, only the `?inline` .scss import works as expected. The 2 regular .scss imports are not included in the bundled output. There is no error message.
+
+Interestingly, if you remove the `?inline` .scss import, then the other 2 .scss imports **DO** work as expected in development mode.

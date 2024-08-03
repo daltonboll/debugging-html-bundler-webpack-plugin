@@ -1,9 +1,5 @@
 # The target/ directory is where compiled maven files go. We do not want to sync those to production
-target/
-
-# Maven files
-mvnw
-mvnw.cmd
+dist/
 
 # Intellij
 .idea/
